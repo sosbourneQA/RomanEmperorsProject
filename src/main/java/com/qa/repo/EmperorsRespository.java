@@ -1,4 +1,11 @@
 package com.qa.repo;
 
-public interface EmperorsRespository {
+import com.qa.domain.Emperor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmperorsRespository extends JpaRepository<Emperor, Long> {
+
+
 }
