@@ -61,7 +61,7 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void getAllNotesTest() throws Exception {
+    public void getAllEmperorsTest() throws Exception {
         List<EmperorDTO> noteDTOList = new ArrayList<>();
         noteDTOList.add(empDTO);
         String content = this.mock.perform(
@@ -76,7 +76,7 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void getNoteByID() throws Exception {
+    public void getEmperorByID() throws Exception {
         String content = this.mock.perform(
                 request(HttpMethod.GET, "/getNoteById/" + this.id)
                         .accept(MediaType.APPLICATION_JSON)
@@ -89,7 +89,7 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void createNoteTest() throws Exception {
+    public void createEmperorTest() throws Exception {
         String result = this.mock.perform(
                 request(HttpMethod.POST, "/createNote")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -104,7 +104,7 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void deleteNoteTest() throws Exception {
+    public void deleteEmperorTest() throws Exception {
         this.mock.perform(
                 request(HttpMethod.DELETE, "/deleteNote/" + this.id)
         ).andExpect(status().isNoContent());
