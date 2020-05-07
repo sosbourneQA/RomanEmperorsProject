@@ -10,10 +10,16 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EmperorControllerUnitTest {
@@ -50,6 +56,37 @@ public class EmperorControllerUnitTest {
     }
 
     @Test
-    public void
+    public void getAllEmperorsTest() {
+        when(service.readEmperors()).thenReturn(this.emperors.stream().map(this::mapToDTO).collect(Collectors.toList()));
+        assertFalse("No emperors found", this.controller.getAllEmperors().getBody().isEmpty());
+        verify(service, times(1)).readEmperors();
+    }
+
+    @Test
+    public void createEmperorsTest() {
+        when(this.service.createEmperor(testEmp)).thenReturn(this.empDTO);
+        assertEquals(this.controller.createEmperor(testEmp), new ResponseEntity<EmperorDTO>(this.empDTO, HttpStatus.CREATED));
+        verify(this.service, times(1)).createEmperor(testEmp);
+    }
+
+    @Test
+    public void deleteEmperorTestFalse() {
+        this.controller.deleteEmperor(id);
+        verify(service, times(1)).deleteEmperor(id);
+    }
+
+    @Test
+    public void deleteEmperorTestTrue() {
+        when(service.deleteEmperor(3L)).thenReturn(true);
+        this.controller.deleteEmperor(3L);
+        verify(service, times(1)).deleteEmperor(3L);
+    }
+
+    @Test
+    public void getEmperorByIdTest() {
+        when(this.service.findEmperorById(id)).thenReturn(this.empDTO);
+        assertEquals(this.controller.getEmperorById(id), new ResponseEntity<EmperorDTO>(this.empDTO, HttpStatus.OK));
+        verify(service, times(1)).findEmperorById(id);
+    }
 
 }
