@@ -1,4 +1,10 @@
 package com.qa.exceptions;
 
-public class HistorianNotFoundException {
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+import javax.persistence.EntityNotFoundException;
+
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The Emperor does not exist")
+public class HistorianNotFoundException extends EntityNotFoundException {
 }
