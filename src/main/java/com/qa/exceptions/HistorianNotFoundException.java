@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.persistence.EntityNotFoundException;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The Emperor does not exist")
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "The Historian does not exist")
 public class HistorianNotFoundException extends EntityNotFoundException {
 }

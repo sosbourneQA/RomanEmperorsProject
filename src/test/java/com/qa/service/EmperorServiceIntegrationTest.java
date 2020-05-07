@@ -41,9 +41,10 @@ public class EmperorServiceIntegrationTest {
 
     @Before
     public void setUp() {
-        this.testEmp = new Emperor("name", "date", "date");
         this.repo.deleteAll();
+        this.testEmp = new Emperor("name", "date", "date");
         this.testEmpWithId = this.repo.save(this.testEmp);
+
     }
 
     @Test
@@ -60,7 +61,7 @@ public class EmperorServiceIntegrationTest {
 
     @Test
     public void findEmperorByIdTest() {
-        assertThat(this.service.findEmperorById(this.testEmpWithId.getId())).isEqualTo(this.testEmpWithId);
+        assertThat(this.service.findEmperorById(this.testEmpWithId.getId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
     }
 
     @Test

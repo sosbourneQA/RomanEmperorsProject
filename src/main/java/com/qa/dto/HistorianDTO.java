@@ -1,5 +1,7 @@
 package com.qa.dto;
 
+import java.util.Objects;
+
 public class HistorianDTO {
 
     private Long id;
@@ -37,5 +39,20 @@ public class HistorianDTO {
 
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HistorianDTO that = (HistorianDTO) o;
+        return id.equals(that.id) &&
+                name.equals(that.name) &&
+                speciality.equals(that.speciality);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, speciality);
     }
 }
