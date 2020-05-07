@@ -61,24 +61,24 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void getAllNotesTest() throws Exception {
-        List<EmperorDTO> noteDTOList = new ArrayList<>();
-        noteDTOList.add(empDTO);
+    public void getAllEmperorsTest() throws Exception {
+        List<EmperorDTO> emperorDTOListDTOList = new ArrayList<>();
+        emperorDTOListDTOList.add(empDTO);
         String content = this.mock.perform(
-                request(HttpMethod.GET, "/getAllNotes")
+                request(HttpMethod.GET, "/getAllEmperors")
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
-        assertEquals(content, this.objectMapper.writeValueAsString(noteDTOList));
+        assertEquals(content, this.objectMapper.writeValueAsString(emperorDTOListDTOList));
     }
 
     @Test
-    public void getNoteByID() throws Exception {
+    public void getEmperorByID() throws Exception {
         String content = this.mock.perform(
-                request(HttpMethod.GET, "/getNoteById/" + this.id)
+                request(HttpMethod.GET, "/getEmperorById/" + this.id)
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
@@ -89,9 +89,9 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void createNoteTest() throws Exception {
+    public void createEmperorTest() throws Exception {
         String result = this.mock.perform(
-                request(HttpMethod.POST, "/createNote")
+                request(HttpMethod.POST, "/createEmperor")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(this.objectMapper.writeValueAsString(testEmp))
                         .accept(MediaType.APPLICATION_JSON)
@@ -104,9 +104,9 @@ public class EmperorsControllerIntegrationTest {
     }
 
     @Test
-    public void deleteNoteTest() throws Exception {
+    public void deleteEmperorTest() throws Exception {
         this.mock.perform(
-                request(HttpMethod.DELETE, "/deleteNote/" + this.id)
+                request(HttpMethod.DELETE, "/deleteEmperor/" + this.id)
         ).andExpect(status().isNoContent());
     }
 

@@ -9,4 +9,3 @@ public interface ArticlesRepository extends JpaRepository<Article, Long> {
 
 
 }
-
