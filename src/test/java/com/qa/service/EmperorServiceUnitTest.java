@@ -23,7 +23,7 @@ import static org.mockito.Mockito.*;
 public class EmperorServiceUnitTest {
 
     @InjectMocks
-    private ArticleService service;
+    private EmperorService service;
 
     @Mock
     private EmperorsRespository repo;

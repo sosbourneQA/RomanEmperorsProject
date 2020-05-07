@@ -2,7 +2,7 @@ package com.qa.rest;
 
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
-import com.qa.service.ArticleService;
+import com.qa.service.EmperorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +15,10 @@ import java.util.List;
 @Controller
 public class EmperorController {
 
-    private final ArticleService service;
+    private final EmperorService service;
 
     @Autowired
-    public EmperorController(ArticleService service) {
+    public EmperorController(EmperorService service) {
         this.service = service;
     }
 

@@ -15,14 +15,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EmperorServiceIntegrationTest {
 
     @Autowired
-    private ArticleService service;
+    private EmperorService service;
 
     @Autowired
     private EmperorsRespository repo;
