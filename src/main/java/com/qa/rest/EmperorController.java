@@ -22,7 +22,7 @@ public class EmperorController {
         this.service = service;
     }
 
-    @GetMapping("/getALlEmperors")
+    @GetMapping("/getAllEmperors")
     public ResponseEntity<List<EmperorDTO>> getAllEmperors() {
         return ResponseEntity.ok(this.service.readEmperors());
     }
