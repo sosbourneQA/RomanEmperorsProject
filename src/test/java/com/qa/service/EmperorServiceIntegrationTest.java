@@ -15,7 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -23,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EmperorServiceIntegrationTest {
 
     @Autowired
-    private EmperorService service;
+    private ArticleService service;
 
     @Autowired
     private EmperorsRespository repo;

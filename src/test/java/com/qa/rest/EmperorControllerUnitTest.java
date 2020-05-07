@@ -2,7 +2,7 @@ package com.qa.rest;
 
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
-import com.qa.service.EmperorService;
+import com.qa.service.ArticleService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +28,7 @@ public class EmperorControllerUnitTest {
     private EmperorController controller;
 
     @Mock
-    private EmperorService service;
+    private ArticleService service;
 
     private List<Emperor> emperors;
 
