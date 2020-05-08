@@ -1,5 +1,9 @@
 package com.qa.dto;
 
+import com.qa.domain.Article;
+
+
+import java.util.List;
 import java.util.Objects;
 
 public class EmperorDTO {
@@ -8,15 +12,17 @@ public class EmperorDTO {
     private String name;
     private String reignStart;
     private String reignEnd;
+    private List<ArticleDTO> articles;
 
 
     public EmperorDTO() {
     }
 
-    public EmperorDTO(String name, String reignStart, String reignEnd) {
+    public EmperorDTO(String name, String reignStart, String reignEnd, List<ArticleDTO> articles) {
         this.name = name;
         this.reignStart = reignStart;
         this.reignEnd = reignEnd;
+        this.articles = articles;
     }
 
     public Long getId() {
@@ -49,6 +55,14 @@ public class EmperorDTO {
 
     public void setReignEnd(String reignEnd) {
         this.reignEnd = reignEnd;
+    }
+
+    public List<ArticleDTO> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<ArticleDTO> articles) {
+        this.articles = articles;
     }
 
     @Override
