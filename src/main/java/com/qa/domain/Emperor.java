@@ -1,6 +1,8 @@
 package com.qa.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -13,6 +15,9 @@ public class Emperor {
     private String name;
     private String reignStart;
     private String reignEnd;
+
+    @OneToMany(mappedBy = "emp", fetch = FetchType.LAZY)
+    private List<Article> articles = new ArrayList<>();
 
     public Emperor() {
     }
@@ -53,6 +58,14 @@ public class Emperor {
 
     public void setReignEnd(String reignEnd) {
         this.reignEnd = reignEnd;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 
     @Override
