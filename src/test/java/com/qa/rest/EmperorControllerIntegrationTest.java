@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class EmperorsControllerIntegrationTest {
+public class EmperorControllerIntegrationTest {
 
     @Autowired
     private MockMvc mock;
@@ -62,8 +62,8 @@ public class EmperorsControllerIntegrationTest {
 
     @Test
     public void getAllEmperorsTest() throws Exception {
-        List<EmperorDTO> emperorDTOListDTOList = new ArrayList<>();
-        emperorDTOListDTOList.add(empDTO);
+        List<EmperorDTO> emperorDTOList = new ArrayList<>();
+        emperorDTOList.add(empDTO);
         String content = this.mock.perform(
                 request(HttpMethod.GET, "/getAllEmperors")
                         .accept(MediaType.APPLICATION_JSON)
@@ -72,7 +72,7 @@ public class EmperorsControllerIntegrationTest {
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
-        assertEquals(content, this.objectMapper.writeValueAsString(emperorDTOListDTOList));
+        assertEquals(content, this.objectMapper.writeValueAsString(emperorDTOList));
     }
 
     @Test
