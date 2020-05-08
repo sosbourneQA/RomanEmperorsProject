@@ -1,7 +1,5 @@
 package com.qa.service;
 
-
-
 import com.qa.domain.Article;
 import com.qa.dto.ArticleDTO;
 import com.qa.exceptions.ArticleNotFoundException;
@@ -56,6 +54,5 @@ public class ArticleService {
         this.repo.deleteById(id);
         return this.repo.existsById(id);
     }
-
 
 }
