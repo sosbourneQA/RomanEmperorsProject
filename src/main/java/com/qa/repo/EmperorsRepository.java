@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmperorsRespository extends JpaRepository<Emperor, Long> {
+public interface EmperorsRepository extends JpaRepository<Emperor, Long> {
 
 
 }

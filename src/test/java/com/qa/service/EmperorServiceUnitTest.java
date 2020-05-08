@@ -4,7 +4,7 @@ package com.qa.service;
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
 import com.qa.exceptions.EmperorNotFoundException;
-import com.qa.repo.EmperorsRespository;
+import com.qa.repo.EmperorsRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +26,7 @@ public class EmperorServiceUnitTest {
     private EmperorService service;
 
     @Mock
-    private EmperorsRespository repo;
+    private EmperorsRepository repo;
 
     @Mock
     private ModelMapper mapper;
