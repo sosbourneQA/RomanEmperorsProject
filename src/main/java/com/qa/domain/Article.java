@@ -51,11 +51,12 @@ public class Article {
         if (o == null || getClass() != o.getClass()) return false;
         Article article = (Article) o;
         return id.equals(article.id) &&
-                text.equals(article.text);
+                Objects.equals(text, article.text) &&
+                Objects.equals(emp, article.emp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, text);
+        return Objects.hash(id, text, emp);
     }
 }

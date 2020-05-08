@@ -74,13 +74,14 @@ public class Emperor {
         if (o == null || getClass() != o.getClass()) return false;
         Emperor emperor = (Emperor) o;
         return id.equals(emperor.id) &&
-                name.equals(emperor.name) &&
-                reignStart.equals(emperor.reignStart) &&
-                reignEnd.equals(emperor.reignEnd);
+                Objects.equals(name, emperor.name) &&
+                Objects.equals(reignStart, emperor.reignStart) &&
+                Objects.equals(reignEnd, emperor.reignEnd) &&
+                Objects.equals(articles, emperor.articles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, reignStart, reignEnd);
+        return Objects.hash(id, name, reignStart, reignEnd, articles);
     }
 }
