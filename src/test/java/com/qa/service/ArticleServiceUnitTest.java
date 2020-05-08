@@ -25,7 +25,7 @@ import static org.mockito.Mockito.*;
 public class ArticleServiceUnitTest {
 
     @InjectMocks
-    private com.qa.service.ArticleService service;
+    private ArticleService service;
 
     @Mock
     private ArticlesRepository repo;

@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class ArticleServiceIntegrationTest {
 
     @Autowired
-    private com.qa.service.ArticleService service;
+    private ArticleService service;
 
     @Autowired
     private ArticlesRepository repo;
