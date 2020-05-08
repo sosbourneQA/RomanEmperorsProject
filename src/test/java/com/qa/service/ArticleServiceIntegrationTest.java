@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -69,3 +68,4 @@ public class ArticleServiceIntegrationTest {
         assertThat(this.service.deleteArticle(this.testArticleWithId.getId())).isFalse();
     }
 }
+
