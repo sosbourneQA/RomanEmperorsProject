@@ -1,22 +1,22 @@
 package com.qa.service;
 
-        import com.qa.domain.Emperor;
-        import com.qa.dto.EmperorDTO;
-        import com.qa.repo.EmperorsRepository;
-        import org.junit.Before;
-        import org.junit.Test;
-        import org.junit.runner.RunWith;
-        import org.modelmapper.ModelMapper;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.boot.test.context.SpringBootTest;
-        import org.springframework.test.context.junit4.SpringRunner;
+import com.qa.domain.Emperor;
+import com.qa.dto.EmperorDTO;
+import com.qa.repo.EmperorsRepository;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 
-        import java.util.stream.Collectors;
-        import java.util.stream.Stream;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-        import static org.assertj.core.api.Assertions.*;
-        import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
