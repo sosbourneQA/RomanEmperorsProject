@@ -4,7 +4,7 @@ package com.qa.service;
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
 import com.qa.exceptions.EmperorNotFoundException;
-import com.qa.repo.EmperorsRespository;
+import com.qa.repo.EmperorsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 @Service
 public class EmperorService {
 
-    private final EmperorsRespository repo;
+    private final EmperorsRepository repo;
     private final ModelMapper mapper;
 
     @Autowired
-    public EmperorService(EmperorsRespository repo, ModelMapper mapper) {
+    public EmperorService(EmperorsRepository repo, ModelMapper mapper) {
         this.repo = repo;
         this.mapper = mapper;
     }

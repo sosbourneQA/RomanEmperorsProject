@@ -1,9 +1,9 @@
 package com.qa.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.domain.Emperor;
-import com.qa.dto.EmperorDTO;
-import com.qa.repo.EmperorsRepository;
+import com.qa.domain.Article;
+import com.qa.dto.ArticleDTO;
+import com.qa.repo.ArticlesRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,87 +27,87 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class EmperorsControllerIntegrationTest {
+public class ArticleControllerIntegrationTest {
 
     @Autowired
     private MockMvc mock;
 
     @Autowired
-    private EmperorsRepository repo;
+    private ArticlesRepository repo;
 
     @Autowired
     private ModelMapper mapper;
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private Emperor testEmp;
+    private Article testArticle;
 
-    private Emperor testEmpWithID;
+    private Article testArticleWithID;
 
     private long id;
 
-    private EmperorDTO empDTO;
+    private ArticleDTO articleDTO;
 
-    private EmperorDTO mapToDTO(Emperor emp){
-        return this.mapper.map(emp, EmperorDTO.class);
+    private ArticleDTO mapToDTO(Article article){
+        return this.mapper.map(article, ArticleDTO.class);
     }
 
     @Before
     public void setUp(){
         this.repo.deleteAll();
-        this.testEmp = new Emperor("name", "date", "date");
-        this.testEmpWithID = this.repo.save(testEmp);
-        this.id = testEmpWithID.getId();
-        this.empDTO = this.mapToDTO(testEmpWithID);
+        this.testArticle = new Article("text");
+        this.testArticleWithID = this.repo.save(testArticle);
+        this.id = testArticleWithID.getId();
+        this.articleDTO = this.mapToDTO(testArticleWithID);
     }
 
     @Test
-    public void getAllEmperorsTest() throws Exception {
-        List<EmperorDTO> emperorDTOListDTOList = new ArrayList<>();
-        emperorDTOListDTOList.add(empDTO);
+    public void getAllArticleTest() throws Exception {
+        List<ArticleDTO> articleDTOList = new ArrayList<>();
+        articleDTOList.add(articleDTO);
         String content = this.mock.perform(
-                request(HttpMethod.GET, "/getAllEmperors")
+                request(HttpMethod.GET, "/getAllArticles")
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
-        assertEquals(content, this.objectMapper.writeValueAsString(emperorDTOListDTOList));
+        assertEquals(content, this.objectMapper.writeValueAsString(articleDTOList));
     }
 
     @Test
-    public void getEmperorByID() throws Exception {
+    public void getArticleByID() throws Exception {
         String content = this.mock.perform(
-                request(HttpMethod.GET, "/getEmperorById/" + this.id)
+                request(HttpMethod.GET, "/getArticleById/" + this.id)
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
-        assertEquals(content, this.objectMapper.writeValueAsString(empDTO));
+        assertEquals(content, this.objectMapper.writeValueAsString(articleDTO));
     }
 
     @Test
-    public void createEmperorTest() throws Exception {
+    public void createArticleTest() throws Exception {
         String result = this.mock.perform(
-                request(HttpMethod.POST, "/createEmperor")
+                request(HttpMethod.POST, "/createArticle")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(this.objectMapper.writeValueAsString(testEmp))
+                        .content(this.objectMapper.writeValueAsString(testArticle))
                         .accept(MediaType.APPLICATION_JSON)
         )
                 .andExpect(status().isCreated())
                 .andReturn()
                 .getResponse()
                 .getContentAsString();
-        assertEquals(result, this.objectMapper.writeValueAsString(empDTO));
+        assertEquals(result, this.objectMapper.writeValueAsString(articleDTO));
     }
 
     @Test
-    public void deleteEmperorTest() throws Exception {
+    public void deleteArticleTest() throws Exception {
         this.mock.perform(
-                request(HttpMethod.DELETE, "/deleteEmperor/" + this.id)
+                request(HttpMethod.DELETE, "/deleteArticle/" + this.id)
         ).andExpect(status().isNoContent());
     }
 

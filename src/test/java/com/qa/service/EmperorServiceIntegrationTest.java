@@ -2,7 +2,7 @@ package com.qa.service;
 
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
-import com.qa.repo.EmperorsRespository;
+import com.qa.repo.EmperorsRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +26,7 @@ public class EmperorServiceIntegrationTest {
     private EmperorService service;
 
     @Autowired
-    private EmperorsRespository repo;
+    private EmperorsRepository repo;
 
     @Autowired
     private ModelMapper mapper;
@@ -50,8 +50,8 @@ public class EmperorServiceIntegrationTest {
     @Test
     public void readEmperorsTest() {
         assertThat(this.service.readEmperors()).isEqualTo(
-                        Stream.of(this.mapToDTO(testEmpWithId)).collect(Collectors.toList())
-                );
+                Stream.of(this.mapToDTO(testEmpWithId)).collect(Collectors.toList())
+        );
     }
 
     @Test
@@ -69,3 +69,4 @@ public class EmperorServiceIntegrationTest {
         assertThat(this.service.deleteEmperor(this.testEmpWithId.getId())).isFalse();
     }
 }
+
