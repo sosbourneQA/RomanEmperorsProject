@@ -51,6 +51,7 @@ public class EmperorControllerUnitTest {
         this.emperors = new ArrayList<>();
         this.testEmp = new Emperor("name", "date", "date");
         this.emperors.add(testEmp);
+        this.testEmpWithId = new Emperor(testEmp.getName(), testEmp.getReignStart(), testEmp.getReignEnd());
         this.testEmpWithId.setId(this.id);
         this.empDTO = this.mapToDTO(testEmpWithId);
     }
