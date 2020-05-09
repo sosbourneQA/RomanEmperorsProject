@@ -7,7 +7,7 @@ function createArticle() {
     REQ.send(data); // what we want to send across
 
     REQ.onload = () => {
-        if (REQ.status === 200) {
+        if (REQ.status === 201) {
             console.log(REQ.response);
             console.log("article created");
         } else {
