@@ -95,7 +95,7 @@ function updateEmperor() {
 }
 let buttUpdateEmperor = document.querySelector("#six");
 buttUpdateEmperor.addEventListener("click", updateEmperor);
-S
+
 
 
 
