@@ -22,7 +22,25 @@ buttCreateArticle.addEventListener("click", createArticle);
 
 
 const REQ2 = new XMLHttpRequest();
-function getAllArticles() {}
+function getAllArticles() {
+    REQ2.open("GET", "http://localhost:8181/getAllEmperors");
+    REQ2.setRequestHeader("Content-Type", "Application/json");
+    // REQ2.setRequestHeader("Access-Control-Allow-Origin", "*");
+    REQ2.responseType = "json";
+    REQ2.send();
+
+    REQ2.onload = () => {
+        if (REQ2.status == 200) {
+            // console.dir(REQ3);
+            console.log(REQ3.response);
+            console.log("here is the list of emperors");
+        } else {
+            console.log("there was an error in retrieving the data");
+        }
+    }
+}
+let buttGetAllEmperors = document.querySelector("#three");
+buttGetAllEmperors.addEventListener("click", getAllArticles);
 
 
 const REQ4 = new XMLHttpRequest();
