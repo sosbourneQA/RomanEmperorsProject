@@ -1,0 +1,13 @@
+com\qa\rest\ArticleControllerUnitTest.class
+com\qa\domain\EmperorDomainUnitTest.class
+com\qa\dto\EmperorDtoUnitTest.class
+com\qa\rest\EmperorControllerUnitTest.class
+com\qa\rest\EmperorsControllerIntegrationTest.class
+com\qa\dto\ArticleDtoUnitTest.class
+com\qa\domain\ArticleDomainUnitTest.class
+com\qa\AppTest.class
+com\qa\service\EmperorServiceUnitTest.class
+com\qa\service\ArticleServiceUnitTest.class
+com\qa\service\ArticleServiceIntegrationTest.class
+com\qa\rest\ArticleControllerIntegrationTest.class
+com\qa\service\EmperorServiceIntegrationTest.class
