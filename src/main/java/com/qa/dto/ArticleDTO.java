@@ -14,6 +14,11 @@ public class ArticleDTO {
         this.text = text;
     }
 
+    public ArticleDTO(Long id, String text) {
+        this.id = id;
+        this.text = text;
+    }
+
     public Long getId() {
         return id;
     }

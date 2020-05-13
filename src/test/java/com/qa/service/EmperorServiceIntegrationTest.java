@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EmperorServiceIntegrationTest {
+//    4 Tests
 
     @Autowired
     private EmperorService service;

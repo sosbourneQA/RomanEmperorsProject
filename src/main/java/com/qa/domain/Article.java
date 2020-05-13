@@ -21,6 +21,11 @@ public class Article {
         this.text = text;
     }
 
+    public Article(Long id, String text) {
+        this.id = id;
+        this.text = text;
+    }
+
     public Long getId() {
         return id;
     }
