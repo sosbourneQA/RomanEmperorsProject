@@ -60,13 +60,6 @@
 
   </dependencies>
 
-  <repositories>
-    <repository>
-      <id>repository.spring.milestone</id>
-      <name>Spring Milestones Repository</name>
-      <url>http://repo.spring.io/milestone</url>
-    </repository>
-  </repositories>
 
   <build>
     <finalName>${project.artifactId}</finalName>
