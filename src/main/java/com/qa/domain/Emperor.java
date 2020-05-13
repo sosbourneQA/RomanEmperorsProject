@@ -23,6 +23,13 @@ public class Emperor {
         this.reignEnd = reignEnd;
     }
 
+    public Emperor(Long id, String name, String reignStart, String reignEnd) {
+        this.id = id;
+        this.name = name;
+        this.reignStart = reignStart;
+        this.reignEnd = reignEnd;
+    }
+
     public Long getId() {
         return id;
     }
