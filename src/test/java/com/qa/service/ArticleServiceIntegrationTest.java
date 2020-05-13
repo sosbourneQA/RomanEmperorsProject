@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ArticleServiceIntegrationTest {
+//    4 Tests
 
     @Autowired
     private ArticleService service;
