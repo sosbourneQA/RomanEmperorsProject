@@ -47,7 +47,9 @@ public class EmperorDomainUnitTest {
     @Test
     public void createPlayWithId(){
         assertEquals(1L, emperor.getId(),0);
-        assertEquals("test play", emperor.getName());
+        assertEquals("name", emperor.getName());
+        assertEquals("start date",emperor.getReignStart());
+        assertEquals("end date", emperor.getReignEnd());
     }
 
     @Test
@@ -84,12 +86,14 @@ public class EmperorDomainUnitTest {
         Emperor emperor = new Emperor("name", "start date", "end date");
         assertNull(emperor.getId());
         assertNotNull(emperor.getName());
+        assertNotNull(emperor.getReignStart());
+        assertNotNull(emperor.getReignEnd());
     }
 
     @Test
     public void emptyConstructor(){
-        Emperor plays = new Emperor();
-        assertNull(plays.getId());
+        Emperor emperor = new Emperor();
+        assertNull(emperor.getId());
     }
 
     @Test
