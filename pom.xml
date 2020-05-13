@@ -121,7 +121,7 @@
                 <archive>
                   <manifest>
                     <mainClass>
-                      com.qa.ims.Runner
+                      com.qa.App
                     </mainClass>
                   </manifest>
                 </archive>
