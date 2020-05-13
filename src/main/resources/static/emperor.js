@@ -53,9 +53,10 @@ buttGetAllEmperors.addEventListener("click", getAllEmperors);
 const REQ5 = new XMLHttpRequest();
 function getEmperorById() {
 
-    REQ5.open("GET", "http://localhost:8181/getEmperorById/{id}");
+    REQ5.open("GET", "http://localhost:8181/getEmperorById/1");
     REQ5.setRequestHeader("Content-Type", "Application/json");
     REQ5.responseType = "json";
+    REQ5.send();
 
     REQ5.onload = () => {
         if(REQ5.status == 200) {
@@ -77,9 +78,9 @@ buttGetEmperorById.addEventListener("click", getEmperorById);
 const REQ7 = new XMLHttpRequest();
 function updateEmperor() {
 
-    let data = `{"id": 1, "name": "Trajan", "date": "date", "date": "date"}`
+    let data = `{"id": 1, "name": "Trajan", "reignStart": "start", "reignEnd": "end"}`
 
-    REQ7.open("PUT", "http://localhost:8181/updateEmperor/{id}");
+    REQ7.open("PUT", "http://localhost:8181/updateEmperor/1");
     REQ7.setRequestHeader("Content-Type", "Application/json");
     REQ7.send(data);
 
@@ -87,7 +88,7 @@ function updateEmperor() {
         if ( REQ7.status == 200) {
             console.dir(REQ7);
             console.log(REQ7.response)
-            console.log("emperor has been updates");
+            console.log("emperor has been updated");
         } else {
             console.log("handle error")
         }
@@ -102,13 +103,15 @@ buttUpdateEmperor.addEventListener("click", updateEmperor);
 const REQ9 =  new XMLHttpRequest();
 function deleteEmperor() {
 
-    REQ9.open("DELETE", "http://localhost:8181/deleteEmperor/{id}");
+    REQ9.open("DELETE", "http://localhost:8181/deleteEmperor/1");
     REQ9.setRequestHeader("Content-Type", "Application/json");
     REQ9.responseType = "json";
+    REQ9.send();
 
     REQ9.onload = () => {
         if (REQ9.status == 204) {
             console.log(REQ9.response);
+            console.log("emperor has been deleted");
         } else {
             console.log("handle error");
         }
