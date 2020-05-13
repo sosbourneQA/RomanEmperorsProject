@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ArticleService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LukeSO-SoftwareMarch16</a> &gt; <a href="index.source.html" class="el_package">com.qa.service</a> &gt; <span class="el_source">ArticleService.java</span></div><h1>ArticleService.java</h1><pre class="source lang-java linenums">package com.qa.service;
+
+
+
+import com.qa.domain.Article;
+import com.qa.dto.ArticleDTO;
+import com.qa.exceptions.ArticleNotFoundException;
+import com.qa.repo.ArticlesRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ArticleService {
+
+    private final ArticlesRepository repo;
+    private final ModelMapper mapper;
+
+    @Autowired
+<span class="fc" id="L23">    public ArticleService(ArticlesRepository repo, ModelMapper mapper) {</span>
+<span class="fc" id="L24">        this.repo = repo;</span>
+<span class="fc" id="L25">        this.mapper = mapper;</span>
+<span class="fc" id="L26">    }</span>
+
+    private ArticleDTO mapToDTO(Article article) {
+<span class="fc" id="L29">        return this.mapper.map(article, ArticleDTO.class);</span>
+    }
+
+    public List&lt;ArticleDTO&gt; readArticles() {
+<span class="fc" id="L33">        return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());</span>
+    }
+
+    public ArticleDTO createArticle(Article article) {
+<span class="fc" id="L37">        Article tempArticle = this.repo.save(article);</span>
+<span class="fc" id="L38">        return this.mapToDTO(tempArticle);</span>
+    }
+
+    public ArticleDTO findArticleById(Long id) {
+<span class="fc" id="L42">        return this.mapToDTO(this.repo.findById(id).orElseThrow(ArticleNotFoundException::new));</span>
+    }
+
+    public ArticleDTO updateArticle(Long id, Article article) {
+<span class="nc" id="L46">        Article update = this.repo.findById(id).orElseThrow(ArticleNotFoundException::new);</span>
+<span class="nc" id="L47">        update.setText(article.getText());</span>
+<span class="nc" id="L48">        Article tempArticle = this.repo.save(article);</span>
+<span class="nc" id="L49">        return this.mapToDTO(tempArticle);</span>
+    }
+
+    public boolean deleteArticle(Long id) {
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if(!this.repo.existsById(id)) {</span>
+<span class="fc" id="L54">            throw new ArticleNotFoundException();</span>
+        }
+<span class="fc" id="L56">        this.repo.deleteById(id);</span>
+<span class="fc" id="L57">        return this.repo.existsById(id);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
