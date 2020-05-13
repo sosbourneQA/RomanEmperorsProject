@@ -6,6 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ArticleDtoUnitTest {
+//    13 Tests
 
     private ArticleDTO article;
     private ArticleDTO other;

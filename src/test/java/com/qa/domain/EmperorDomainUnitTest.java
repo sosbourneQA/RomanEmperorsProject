@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 
 public class EmperorDomainUnitTest {
+//    13 Tests
 
     private Emperor emperor;
     private Emperor other;
