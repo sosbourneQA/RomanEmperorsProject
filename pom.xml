@@ -115,7 +115,7 @@
               <archive>
                 <manifest>
                   <mainClass>
-                    com.qa.MesaDND
+                    com.qa.App
                   </mainClass>
                 </manifest>
               </archive>
