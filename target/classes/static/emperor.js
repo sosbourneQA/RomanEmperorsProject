@@ -1,7 +1,7 @@
 const REQ1 = new XMLHttpRequest();
 function createEmperor() {
 
-    let data = `{"name": "Augustus", "reignStart": "date", "reignEnd": "date"}`;
+    let data = `{"id": 1, "name": "Augustus", "reignStart": "date", "reignEnd": "date"}`;
 
     REQ1.open("POST", `http://localhost:8181/createEmperor`);
     REQ1.setRequestHeader("Content-Type", "Application/json");
@@ -119,5 +119,3 @@ function deleteEmperor() {
 }
 let buttDeleteEmperor = document.querySelector("#eight");
 buttDeleteEmperor.addEventListener("click", deleteEmperor);
-
-

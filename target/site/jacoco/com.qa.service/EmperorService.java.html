@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmperorService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LukeSO-SoftwareMarch16-HobbyProject</a> &gt; <a href="index.source.html" class="el_package">com.qa.service</a> &gt; <span class="el_source">EmperorService.java</span></div><h1>EmperorService.java</h1><pre class="source lang-java linenums">package com.qa.service;
+
+
+import com.qa.domain.Emperor;
+import com.qa.dto.EmperorDTO;
+import com.qa.exceptions.EmperorNotFoundException;
+import com.qa.repo.EmperorsRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class EmperorService {
+
+    private final EmperorsRepository repo;
+    private final ModelMapper mapper;
+
+    @Autowired
+<span class="fc" id="L22">    public EmperorService(EmperorsRepository repo, ModelMapper mapper) {</span>
+<span class="fc" id="L23">        this.repo = repo;</span>
+<span class="fc" id="L24">        this.mapper = mapper;</span>
+<span class="fc" id="L25">    }</span>
+
+    private EmperorDTO mapToDTO(Emperor emp) {
+<span class="fc" id="L28">        return this.mapper.map(emp, EmperorDTO.class);</span>
+    }
+
+    public List&lt;EmperorDTO&gt; readEmperors() {
+<span class="fc" id="L32">        return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());</span>
+    }
+
+    public EmperorDTO createEmperor(Emperor emp) {
+<span class="fc" id="L36">        Emperor tempEmp = this.repo.save(emp);</span>
+<span class="fc" id="L37">        return this.mapToDTO(tempEmp);</span>
+    }
+
+    public EmperorDTO findEmperorById(Long id) {
+<span class="fc" id="L41">        return this.mapToDTO(this.repo.findById(id).orElseThrow(EmperorNotFoundException::new));</span>
+    }
+
+    public EmperorDTO updateEmperor(Long id, Emperor emp) {
+<span class="nc" id="L45">        Emperor update = this.repo.findById(id).orElseThrow(EmperorNotFoundException::new);</span>
+<span class="nc" id="L46">        update.setName(emp.getName());</span>
+<span class="nc" id="L47">        update.setReignStart(emp.getReignStart());</span>
+<span class="nc" id="L48">        update.setReignStart(emp.getReignEnd());</span>
+<span class="nc" id="L49">        Emperor tempEmp = this.repo.save(emp);</span>
+<span class="nc" id="L50">        return this.mapToDTO(tempEmp);</span>
+    }
+
+    public boolean deleteEmperor(Long id) {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if(!this.repo.existsById(id)) {</span>
+<span class="fc" id="L55">            throw new EmperorNotFoundException();</span>
+        }
+<span class="fc" id="L57">        this.repo.deleteById(id);</span>
+<span class="fc" id="L58">        return this.repo.existsById(id);</span>
+    }
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
