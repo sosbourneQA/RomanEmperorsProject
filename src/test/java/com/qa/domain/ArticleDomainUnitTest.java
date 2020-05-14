@@ -21,11 +21,14 @@ public class ArticleDomainUnitTest {
     public void settersTest(){
         assertNotNull(article.getId());
         assertNotNull(article.getText());
+//        assertNull(article.getEmperor());
 
         article.setId(null);
         assertNull(article.getId());
         article.setText(null);
         assertNull(article.getText());
+//        article.setEmperor(null);
+//        assertNull(article.getEmperor());
     }
 
     @Test
@@ -66,12 +69,12 @@ public class ArticleDomainUnitTest {
         assertFalse(article.equals(other));
     }
 
-    @Test(expected = NullPointerException.class)
-    public void checkEqualityBetweenDifferentObjectsNullDescription(){
-        article.setText(null);
-        other.setText(null);
-        assertTrue(article.equals(other));
-    }
+//    @Test(expected = NullPointerException.class)
+//    public void checkEqualityBetweenDifferentObjectsNullDescription(){
+//        article.setText(null);
+//        other.setText(null);
+//        assertTrue(article.equals(other));
+//    }
 
     @Test
     public void constructorWithoutId(){

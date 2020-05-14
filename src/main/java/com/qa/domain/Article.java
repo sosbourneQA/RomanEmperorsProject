@@ -1,9 +1,8 @@
 package com.qa.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +12,9 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String text;
+
+    @ManyToOne(targetEntity = Emperor.class)
+    private Emperor emperor;
 
     public Article() {
     }
@@ -42,17 +44,27 @@ public class Article {
         this.text = text;
     }
 
+    public Emperor getEmperor() {
+        return emperor;
+    }
+
+    public void setEmperor(Emperor emperor) {
+        this.emperor = emperor;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Article article = (Article) o;
         return id.equals(article.id) &&
-                text.equals(article.text);
+                Objects.equals(text, article.text) &&
+                Objects.equals(emperor, article.emperor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, text);
+        return Objects.hash(id, text, emperor);
     }
 }

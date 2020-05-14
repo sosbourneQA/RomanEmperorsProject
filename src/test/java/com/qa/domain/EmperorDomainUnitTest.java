@@ -75,12 +75,12 @@ public class EmperorDomainUnitTest {
         assertFalse(emperor.equals(other));
     }
 
-    @Test(expected = NullPointerException.class)
-    public void checkEqualityBetweenDifferentObjectsNullDescription(){
-        emperor.setName(null);
-        other.setName(null);
-        assertTrue(emperor.equals(other));
-    }
+//    @Test(expected = NullPointerException.class)
+//    public void checkEqualityBetweenDifferentObjectsNullDescription(){
+//        emperor.setName(null);
+//        other.setName(null);
+//        assertTrue(emperor.equals(other));
+//    }
 
     @Test
     public void constructorWithoutId(){

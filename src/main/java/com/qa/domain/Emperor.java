@@ -1,6 +1,8 @@
 package com.qa.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -13,6 +15,9 @@ public class Emperor {
     private String name;
     private String reignStart;
     private String reignEnd;
+
+    @OneToMany(mappedBy = "emperor", fetch = FetchType.LAZY)
+    private List<Article> articles = new ArrayList<>();
 
     public Emperor() {
     }
@@ -62,19 +67,28 @@ public class Emperor {
         this.reignEnd = reignEnd;
     }
 
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Emperor emperor = (Emperor) o;
         return id.equals(emperor.id) &&
-                name.equals(emperor.name) &&
-                reignStart.equals(emperor.reignStart) &&
-                reignEnd.equals(emperor.reignEnd);
+                Objects.equals(name, emperor.name) &&
+                Objects.equals(reignStart, emperor.reignStart) &&
+                Objects.equals(reignEnd, emperor.reignEnd) &&
+                Objects.equals(articles, emperor.articles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, reignStart, reignEnd);
+        return Objects.hash(id, name, reignStart, reignEnd, articles);
     }
 }
