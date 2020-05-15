@@ -35,6 +35,21 @@ public class Emperor {
         this.reignEnd = reignEnd;
     }
 
+    public Emperor(String name, String reignStart, String reignEnd, List<Article> articles) {
+        this.name = name;
+        this.reignStart = reignStart;
+        this.reignEnd = reignEnd;
+        this.articles = articles;
+    }
+
+    public Emperor(Long id, String name, String reignStart, String reignEnd, List<Article> articles) {
+        this.id = id;
+        this.name = name;
+        this.reignStart = reignStart;
+        this.reignEnd = reignEnd;
+        this.articles = articles;
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,5 +1,6 @@
 package com.qa.service;
 
+import com.qa.domain.Article;
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
 import com.qa.repo.EmperorsRepository;
@@ -12,6 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -36,6 +39,8 @@ public class EmperorServiceIntegrationTest {
 
     private Emperor testEmpWithId;
 
+    private List<Article> articles;
+
     private EmperorDTO mapToDTO(Emperor emp) {
         return this.mapper.map(emp, EmperorDTO.class);
     }
@@ -43,7 +48,7 @@ public class EmperorServiceIntegrationTest {
     @Before
     public void setUp() {
         this.repo.deleteAll();
-        this.testEmp = new Emperor("name", "date", "date");
+        this.testEmp = new Emperor("name", "date", "date", articles);
         this.testEmpWithId = this.repo.save(this.testEmp);
 
     }
