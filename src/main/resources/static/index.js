@@ -1,7 +1,7 @@
 const REQ = new XMLHttpRequest();
 function createArticle() {
 
-    let data = `{"text": "this is text"}`;
+    let data = `{"text": "this is text", }`;
 
     REQ.open("POST", "http://localhost:8181/createArticle");
     REQ.setRequestHeader("Content-Type", "Application/json");
