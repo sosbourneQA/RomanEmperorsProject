@@ -11,7 +11,7 @@ public class Emperor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long emperorId;
     private String name;
     private String reignStart;
     private String reignEnd;
@@ -29,7 +29,7 @@ public class Emperor {
     }
 
     public Emperor(Long id, String name, String reignStart, String reignEnd) {
-        this.id = id;
+        this.emperorId = id;
         this.name = name;
         this.reignStart = reignStart;
         this.reignEnd = reignEnd;
@@ -43,19 +43,19 @@ public class Emperor {
     }
 
     public Emperor(Long id, String name, String reignStart, String reignEnd, List<Article> articles) {
-        this.id = id;
+        this.emperorId = id;
         this.name = name;
         this.reignStart = reignStart;
         this.reignEnd = reignEnd;
         this.articles = articles;
     }
 
-    public Long getId() {
-        return id;
+    public Long getEmperorId() {
+        return emperorId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmperorId(Long id) {
+        this.emperorId = id;
     }
 
     public String getName() {
@@ -95,7 +95,7 @@ public class Emperor {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Emperor emperor = (Emperor) o;
-        return id.equals(emperor.id) &&
+        return emperorId.equals(emperor.emperorId) &&
                 Objects.equals(name, emperor.name) &&
                 Objects.equals(reignStart, emperor.reignStart) &&
                 Objects.equals(reignEnd, emperor.reignEnd) &&
@@ -104,6 +104,6 @@ public class Emperor {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, reignStart, reignEnd, articles);
+        return Objects.hash(emperorId, name, reignStart, reignEnd, articles);
     }
 }

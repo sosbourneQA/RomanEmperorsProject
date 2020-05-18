@@ -23,15 +23,15 @@ public class EmperorDtoUnitTest {
 
     @Test
     public void settersTest(){
-        assertNotNull(emperor.getId());
+        assertNotNull(emperor.getEmperorId());
         assertNotNull(emperor.getName());
         assertNotNull(emperor.getReignStart());
         assertNotNull(emperor.getReignEnd());
         assertNull(emperor.getArticles());
 
 
-        emperor.setId(null);
-        assertNull(emperor.getId());
+        emperor.setEmperorId(null);
+        assertNull(emperor.getEmperorId());
         emperor.setName(null);
         assertNull(emperor.getName());
         emperor.setReignStart(null);
@@ -54,7 +54,7 @@ public class EmperorDtoUnitTest {
 
     @Test
     public void createEmperorWithId(){
-        assertEquals(1L, emperor.getId(),0);
+        assertEquals(1L, emperor.getEmperorId(),0);
         assertEquals("name", emperor.getName());
         assertEquals("start date", emperor.getReignStart());
         assertEquals("end date", emperor.getReignEnd());
@@ -73,13 +73,13 @@ public class EmperorDtoUnitTest {
 
     @Test(expected = NullPointerException.class)
     public void emperorIdNullButOtherIdNotNull(){
-        emperor.setId(null);
+        emperor.setEmperorId(null);
         assertFalse(emperor.equals(other));
     }
 
     @Test
     public void emperorIdNotEqual(){
-        other.setId(2L);
+        other.setEmperorId(2L);
         assertFalse(emperor.equals(other));
     }
 
@@ -93,7 +93,7 @@ public class EmperorDtoUnitTest {
     @Test
     public void constructorWithoutId(){
         EmperorDTO emperor = new EmperorDTO("name", "start date", "end date", articles);
-        assertNull(emperor.getId());
+        assertNull(emperor.getEmperorId());
         assertNotNull(emperor.getName());
         assertNotNull(emperor.getReignStart());
         assertNotNull(emperor.getReignEnd());
@@ -103,7 +103,7 @@ public class EmperorDtoUnitTest {
     @Test
     public void emptyConstructor(){
         EmperorDTO playbook = new EmperorDTO();
-        assertNull(playbook.getId());
+        assertNull(playbook.getEmperorId());
     }
 
     @Test

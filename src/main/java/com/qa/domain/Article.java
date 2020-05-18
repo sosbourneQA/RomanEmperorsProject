@@ -1,8 +1,6 @@
 package com.qa.domain;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -10,7 +8,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long articleId;
     private String text;
 
     @ManyToOne(targetEntity = Emperor.class)
@@ -24,16 +22,16 @@ public class Article {
     }
 
     public Article(Long id, String text) {
-        this.id = id;
+        this.articleId = id;
         this.text = text;
     }
 
-    public Long getId() {
-        return id;
+    public Long getArticleId() {
+        return articleId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setArticleId(Long id) {
+        this.articleId = id;
     }
 
     public String getText() {
@@ -58,13 +56,13 @@ public class Article {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Article article = (Article) o;
-        return id.equals(article.id) &&
+        return articleId.equals(article.articleId) &&
                 Objects.equals(text, article.text) &&
                 Objects.equals(emperor, article.emperor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, text, emperor);
+        return Objects.hash(articleId, text, emperor);
     }
 }

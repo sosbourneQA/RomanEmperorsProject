@@ -52,7 +52,7 @@ public class EmperorServiceUnitTest {
         this.testEmp = new Emperor("Trajan", "98 AD", "117 AD");
         this.empList.add(testEmp);
         this.testEmpWithId = new Emperor(testEmp.getName(), testEmp.getReignStart(), testEmp.getReignEnd());
-        this.testEmpWithId.setId(id);
+        this.testEmpWithId.setEmperorId(id);
         this.emperorDTO = this.mapToDTO(testEmpWithId);
     }
 

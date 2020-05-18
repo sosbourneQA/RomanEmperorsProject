@@ -66,12 +66,12 @@ public class EmperorServiceIntegrationTest {
 
     @Test
     public void findEmperorByIdTest() {
-        assertThat(this.service.findEmperorById(this.testEmpWithId.getId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
+        assertThat(this.service.findEmperorById(this.testEmpWithId.getEmperorId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
     }
 
     @Test
     public void deleteEmperorTest() {
-        assertThat(this.service.deleteEmperor(this.testEmpWithId.getId())).isFalse();
+        assertThat(this.service.deleteEmperor(this.testEmpWithId.getEmperorId())).isFalse();
     }
 }
 

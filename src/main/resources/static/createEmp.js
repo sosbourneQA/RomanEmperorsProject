@@ -1,6 +1,3 @@
-// EMPEROR APIs
-
-
 const REQ1 = new XMLHttpRequest();
 function createEmperor() {
 
@@ -16,11 +13,11 @@ function createEmperor() {
         if (REQ1.status === 201) {
             console.log(REQ1.response);
             console.log("emperor created");
-            // alert("You created the Emperor " + document.getElementById("empName").value);
+            alert("You created the Emperor " + document.getElementById("empName").value);
         } else {
             console.log("handle error");
         }
     }
 }
-let buttCreateEmperor = document.querySelector("#four");
+let buttCreateEmperor = document.querySelector("#createEmp");
 buttCreateEmperor.addEventListener("click", createEmperor);

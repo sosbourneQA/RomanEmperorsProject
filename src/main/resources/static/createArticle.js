@@ -1,7 +1,7 @@
 const REQ = new XMLHttpRequest();
 function createArticle() {
 
-    let data = `{"id": 2, "text": "${document.getElementById("url").value}", "emperor": {"id": 1}}`;
+    let data = `{"text": "${document.getElementById("url").value}", "emperor": {"emperorId": ${parseInt(document.getElementById("empId").value)}}}`;
     // let data = `{"id": 2, "text": "article url goes here", "emperor": {"id": 1}}`;
 
     REQ.open("POST", `http://localhost:8181/createArticle`);

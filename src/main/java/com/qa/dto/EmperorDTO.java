@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class EmperorDTO {
 
-    private Long id;
+    private Long emperorId;
     private String name;
     private String reignStart;
     private String reignEnd;
@@ -15,11 +15,12 @@ public class EmperorDTO {
     public EmperorDTO() {
     }
 
-    public EmperorDTO(String name, String reignStart, String reignEnd) {
-        this.name = name;
-        this.reignStart = reignStart;
-        this.reignEnd = reignEnd;
-    }
+//    public EmperorDTO(String name, String reignStart, String reignEnd) {
+//        this.name = name;
+//        this.reignStart = reignStart;
+//        this.reignEnd = reignEnd;
+//    }
+
 
     public EmperorDTO(String name, String reignStart, String reignEnd, List<ArticleDTO> articles) {
         this.name = name;
@@ -29,19 +30,19 @@ public class EmperorDTO {
     }
 
     public EmperorDTO(Long id, String name, String reignStart, String reignEnd, List<ArticleDTO> articles) {
-        this.id = id;
+        this.emperorId = id;
         this.name = name;
         this.reignStart = reignStart;
         this.reignEnd = reignEnd;
         this.articles = articles;
     }
 
-    public Long getId() {
-        return id;
+    public Long getEmperorId() {
+        return emperorId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEmperorId(Long emperorId) {
+        this.emperorId = emperorId;
     }
 
     public String getName() {
@@ -81,7 +82,7 @@ public class EmperorDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EmperorDTO that = (EmperorDTO) o;
-        return id.equals(that.id) &&
+        return emperorId.equals(that.emperorId) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(reignStart, that.reignStart) &&
                 Objects.equals(reignEnd, that.reignEnd) &&
@@ -90,6 +91,6 @@ public class EmperorDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, reignStart, reignEnd, articles);
+        return Objects.hash(emperorId, name, reignStart, reignEnd, articles);
     }
 }

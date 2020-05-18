@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ArticleDTO {
 
-    private Long id;
+    private Long articleId;
     private String text;
 
     public ArticleDTO() {
@@ -15,16 +15,16 @@ public class ArticleDTO {
     }
 
     public ArticleDTO(Long id, String text) {
-        this.id = id;
+        this.articleId = id;
         this.text = text;
     }
 
-    public Long getId() {
-        return id;
+    public Long getArticleId() {
+        return articleId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setArticleId(Long articleId) {
+        this.articleId = articleId;
     }
 
     public String getText() {
@@ -40,12 +40,12 @@ public class ArticleDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ArticleDTO that = (ArticleDTO) o;
-        return id.equals(that.id) &&
+        return articleId.equals(that.articleId) &&
                 text.equals(that.text);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, text);
+        return Objects.hash(articleId, text);
     }
 }

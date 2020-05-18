@@ -19,12 +19,12 @@ public class ArticleDomainUnitTest {
 
     @Test
     public void settersTest(){
-        assertNotNull(article.getId());
+        assertNotNull(article.getArticleId());
         assertNotNull(article.getText());
 //        assertNull(article.getEmperor());
 
-        article.setId(null);
-        assertNull(article.getId());
+        article.setArticleId(null);
+        assertNull(article.getArticleId());
         article.setText(null);
         assertNull(article.getText());
 //        article.setEmperor(null);
@@ -43,7 +43,7 @@ public class ArticleDomainUnitTest {
 
     @Test
     public void createArticleWithId(){
-        assertEquals(1L, article.getId(),0);
+        assertEquals(1L, article.getArticleId(),0);
         assertEquals("test article", article.getText());
     }
 
@@ -59,13 +59,13 @@ public class ArticleDomainUnitTest {
 
     @Test(expected = NullPointerException.class)
     public void articleIdNullButOtherIdNotNull(){
-        article.setId(null);
+        article.setArticleId(null);
         assertFalse(article.equals(other));
     }
 
     @Test
     public void articleIdNotEqual(){
-        other.setId(2L);
+        other.setArticleId(2L);
         assertFalse(article.equals(other));
     }
 
@@ -79,14 +79,14 @@ public class ArticleDomainUnitTest {
     @Test
     public void constructorWithoutId(){
         Article article = new Article("test");
-        assertNull(article.getId());
+        assertNull(article.getArticleId());
         assertNotNull(article.getText());
     }
 
     @Test
     public void emptyConstructor(){
         Article article = new Article();
-        assertNull(article.getId());
+        assertNull(article.getArticleId());
     }
 
     @Test

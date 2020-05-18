@@ -48,7 +48,7 @@
     <div class="inner">
         <header class="align-center">
             <p></p>
-            <h2>Create Emperor</h2>
+            <h2>Update Emperor</h2>
         </header>
     </div>
 </section>
@@ -67,6 +67,10 @@
                 <legend>Details</legend>
                 <ol>
                     <li>
+                        <label for="empId">Emperor Id:</label>
+                        <input id="empId" name="empId" type="text" />
+                    </li>
+                    <li>
                         <label for="empName">Name:</label>
                         <input id="empName" name="empName" type="text" />
                     </li>
@@ -78,17 +82,9 @@
                         <label for="reignEnd">The year his reign ended:</label>
                         <input id="reignEnd" name="reignEnd" type="text" />
                     </li>
-                    <li>
-                        <label for="description">Please give a brief description of this emperor:</label>
-                        <input id="description" name="description" type="text" />
-                    </li>
-                    <li>
-                        <label for="emperorPic">Please upload a photo of the emperor:</label>
-                        <input id="emperorPic" type="file" name="emperorPic" placeholder="Photo" required="" capture>
-                    </li>
                 </ol>
                 <fieldset>
-                    <button id="createEmp" type="submit">Submit</button>
+                    <button id="updateEmp" type="submit">Submit</button>
                 </fieldset>
             </div>
         </div>
@@ -129,7 +125,7 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<script src="./createEmp.js"></script>
+<script src="./updateEmperor.js"></script>
 
 </body>
 </html>

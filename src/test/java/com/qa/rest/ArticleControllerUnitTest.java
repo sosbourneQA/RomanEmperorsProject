@@ -54,7 +54,7 @@ public class ArticleControllerUnitTest {
         this.testArticle = new Article("text");
         this.articles.add(testArticle);
         this.testArticleWithId = new Article(testArticle.getText());
-        this.testArticleWithId.setId(this.id);
+        this.testArticleWithId.setArticleId(this.id);
         this.articleDTO = this.mapToDTO(testArticleWithId);
     }
 
