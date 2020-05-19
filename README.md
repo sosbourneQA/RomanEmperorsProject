@@ -2,7 +2,7 @@ Test Coverage: 87.8% SonarQube, 91% JUnit
 
 # RomanEmperorsProject
 
-This is a web-application made using Spring Boot that allows users can create a profile for a Roman emperor and then add articles relating to that emperor. Emperors and articles can be read, updated or destroyed by the user and instances are stored on an H2 Relational Database Management System. The instances are stored in my H2 database. I developed the program as a Maven project, using IntelliJ as my IDE. The back-end is written in Java and the front-end uses a combination of HTML, CSS and JavaScript. I used Jenkins as the CI Server so send and copy of the program to SonarQube, which was used for static anlysis and was hosted on a virtual machine instance on GCP, and to Nexus Artifact Repository. An idea of the workflow is given by the project kanban board which can be found in the 'Projects' tab on GitHub.
+This is a spring web-application made using Spring Boot that allows users can create profiles for a Roman emperors and then add articles relating to specific emperors. Emperors and articles can be read, updated or destroyed by the user and instances are stored on an H2 Relational Database Management System. The instances are stored in my H2 database. I developed the program as a Maven project, using IntelliJ as my IDE. The back-end is written in Java and the front-end uses a combination of HTML, CSS and JavaScript. I used Jenkins as the CI Server so send and copy of the program to SonarQube, which was used for static anlysis and was hosted on a virtual machine instance on GCP, and to Nexus Artifact Repository. An idea of the workflow is given by the project kanban board which can be found in the 'Projects' tab on GitHub.
 
 The program's server can be run in a terminal, and has been tested on Windows Command Promp and Git Bash using the command 'mvn spring-boot:run'. The server is configured to run on 'localport:8181'. Once the program is running, a user can access the application by searching for the configured localport URL in the browser.
 
@@ -98,7 +98,11 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 * [Google Cloud Platform](https://cloud.google.com/) - Cloud Host
 * [SonarQube](https://www.sonarqube.org/) - Static Analysis Tool
 * [Nexus](https://repository.apache.org/) - Artefact Repository
-* [GitHub](https://github.com/) - Version Control System
+* [GitHub](https://github.com/) - Online Repository, Version Control System and Project Management
+* [Postman](https://www.postman.com/) - Testing APIs
+* [Git](https://git-scm.com/) - Local Repository and Version Control Sytem
+* [H2 Database Engine](https://www.h2database.com/html/main.html) - Relational Database management System
+* [Spring Boot] (https://spring.io/projects/spring-boot) - Java-based Framework that is an API Development Platform
 
 ### Versioning
 
