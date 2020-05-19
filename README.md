@@ -121,8 +121,8 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ### Acknowledgments
 
-* **Nicholas Johnson** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds) - main influence on the project.
-* **Tadas Vaidotas** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds).
-* **Jordan Harrison** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds).
+* **Nicholas Johnson** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds) 
+* **Tadas Vaidotas** - Software Trainer - [tvaidotas](https://github.com/tvaidotas).
+* **Jordan Harrison** - Software Trainer - [JHarry444](https://github.com/JHarry444).
 
 
