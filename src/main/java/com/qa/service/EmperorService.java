@@ -4,6 +4,7 @@ package com.qa.service;
 import com.qa.domain.Emperor;
 import com.qa.dto.EmperorDTO;
 import com.qa.exceptions.EmperorNotFoundException;
+import com.qa.repo.ArticlesRepository;
 import com.qa.repo.EmperorsRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,47 +16,48 @@ import java.util.stream.Collectors;
 @Service
 public class EmperorService {
 
-    private final EmperorsRepository repo;
+    private final EmperorsRepository emperorsRepository;
+    private final ArticlesRepository articlesRepository;
     private final ModelMapper mapper;
 
     @Autowired
-    public EmperorService(EmperorsRepository repo, ModelMapper mapper) {
-        this.repo = repo;
+    public EmperorService(EmperorsRepository emperorsRepository, ArticlesRepository articlesRepository, ModelMapper mapper) {
+        this.emperorsRepository = emperorsRepository;
+        this.articlesRepository = articlesRepository;
         this.mapper = mapper;
     }
 
-    private EmperorDTO mapToDTO(Emperor emp) {
-        return this.mapper.map(emp, EmperorDTO.class);
+    private EmperorDTO mapToDTO(Emperor emperor) {
+        return this.mapper.map(emperor, EmperorDTO.class);
     }
 
     public List<EmperorDTO> readEmperors() {
-        return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+        return this.emperorsRepository.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
     public EmperorDTO createEmperor(Emperor emp) {
-        Emperor tempEmp = this.repo.save(emp);
-        return this.mapToDTO(tempEmp);
+        return this.mapToDTO(this.emperorsRepository.save(emp));
     }
 
     public EmperorDTO findEmperorById(Long id) {
-        return this.mapToDTO(this.repo.findById(id).orElseThrow(EmperorNotFoundException::new));
+        return this.mapToDTO(this.emperorsRepository.findById(id).orElseThrow(EmperorNotFoundException::new));
     }
 
     public EmperorDTO updateEmperor(Long id, Emperor emp) {
-        Emperor update = this.repo.findById(id).orElseThrow(EmperorNotFoundException::new);
+        Emperor update = this.emperorsRepository.findById(id).orElseThrow(EmperorNotFoundException::new);
         update.setName(emp.getName());
         update.setReignStart(emp.getReignStart());
         update.setReignStart(emp.getReignEnd());
-        Emperor tempEmp = this.repo.save(emp);
+        Emperor tempEmp = this.emperorsRepository.save(emp);
         return this.mapToDTO(tempEmp);
     }
 
     public boolean deleteEmperor(Long id) {
-        if(!this.repo.existsById(id)) {
+        if(!this.emperorsRepository.existsById(id)) {
             throw new EmperorNotFoundException();
         }
-        this.repo.deleteById(id);
-        return this.repo.existsById(id);
+        this.emperorsRepository.deleteById(id);
+        return this.emperorsRepository.existsById(id);
     }
 
 

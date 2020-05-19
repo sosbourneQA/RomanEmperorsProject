@@ -58,7 +58,7 @@ public class ArticleControllerIntegrationTest {
         this.repo.deleteAll();
         this.testArticle = new Article("text");
         this.testArticleWithID = this.repo.save(testArticle);
-        this.id = testArticleWithID.getId();
+        this.id = testArticleWithID.getArticleId();
         this.articleDTO = this.mapToDTO(testArticleWithID);
     }
 

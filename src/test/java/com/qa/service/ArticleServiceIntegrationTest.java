@@ -61,12 +61,12 @@ public class ArticleServiceIntegrationTest {
 
     @Test
     public void findArticleByIdTest() {
-        assertThat(this.service.findArticleById(this.testArticleWithId.getId())).isEqualTo(this.mapToDTO(this.testArticleWithId));
+        assertThat(this.service.findArticleById(this.testArticleWithId.getArticleId())).isEqualTo(this.mapToDTO(this.testArticleWithId));
     }
 
     @Test
     public void deleteArticleTest() {
-        assertThat(this.service.deleteArticle(this.testArticleWithId.getId())).isFalse();
+        assertThat(this.service.deleteArticle(this.testArticleWithId.getArticleId())).isFalse();
     }
 }
 

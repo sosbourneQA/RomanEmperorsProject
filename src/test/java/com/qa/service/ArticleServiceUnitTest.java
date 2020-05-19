@@ -54,7 +54,7 @@ public class ArticleServiceUnitTest {
         this.testArticle = new Article("text");
         this.articleList.add(testArticle);
         this.testArticleWithId = new Article(testArticle.getText());
-        this.testArticleWithId.setId(id);
+        this.testArticleWithId.setArticleId(id);
         this.articleDTO = this.mapToDTO(testArticleWithId);
     }
 

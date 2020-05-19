@@ -57,7 +57,7 @@ public class EmperorsControllerIntegrationTest {
         this.repo.deleteAll();
         this.testEmp = new Emperor("name", "date", "date");
         this.testEmpWithID = this.repo.save(testEmp);
-        this.id = testEmpWithID.getId();
+        this.id = testEmpWithID.getEmperorId();
         this.empDTO = this.mapToDTO(testEmpWithID);
     }
 

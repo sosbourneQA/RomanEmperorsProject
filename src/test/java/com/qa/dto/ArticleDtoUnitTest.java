@@ -19,11 +19,11 @@ public class ArticleDtoUnitTest {
 
     @Test
     public void settersTest(){
-        assertNotNull(article.getId());
+        assertNotNull(article.getArticleId());
         assertNotNull(article.getText());
 
-        article.setId(null);
-        assertNull(article.getId());
+        article.setArticleId(null);
+        assertNull(article.getArticleId());
         article.setText(null);
         assertNull(article.getText());
     }
@@ -40,7 +40,7 @@ public class ArticleDtoUnitTest {
 
     @Test
     public void createPlayWithId(){
-        assertEquals(1L, article.getId(),0);
+        assertEquals(1L, article.getArticleId(),0);
         assertEquals("test article", article.getText());
     }
 
@@ -56,13 +56,13 @@ public class ArticleDtoUnitTest {
 
     @Test(expected = NullPointerException.class)
     public void playsIdNullButOtherIdNotNull(){
-        article.setId(null);
+        article.setArticleId(null);
         assertFalse(article.equals(other));
     }
 
     @Test
     public void playsIdNotEqual(){
-        other.setId(2L);
+        other.setArticleId(2L);
         assertFalse(article.equals(other));
     }
 
@@ -76,14 +76,14 @@ public class ArticleDtoUnitTest {
     @Test
     public void constructorWithoutId(){
         ArticleDTO plays = new ArticleDTO("test");
-        assertNull(plays.getId());
+        assertNull(plays.getArticleId());
         assertNotNull(plays.getText());
     }
 
     @Test
     public void emptyConstructor(){
         ArticleDTO plays = new ArticleDTO();
-        assertNull(plays.getId());
+        assertNull(plays.getArticleId());
     }
 
     @Test
