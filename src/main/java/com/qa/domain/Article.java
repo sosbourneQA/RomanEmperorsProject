@@ -11,7 +11,7 @@ public class Article {
     private Long articleId;
     private String text;
 
-    @ManyToOne(targetEntity = Emperor.class)
+    @ManyToOne(targetEntity = Emperor.class, fetch = FetchType.EAGER)
     private Emperor emperor;
 
     public Article() {

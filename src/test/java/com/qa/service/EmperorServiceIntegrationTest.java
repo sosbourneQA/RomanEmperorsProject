@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -38,7 +39,7 @@ public class EmperorServiceIntegrationTest {
 
     private Emperor testEmpWithId;
 
-    private List<Article> articles;
+    private List<Article> articles = new ArrayList<>();
 
     private EmperorDTO mapToDTO(Emperor emp) {
         return this.mapper.map(emp, EmperorDTO.class);
@@ -52,22 +53,22 @@ public class EmperorServiceIntegrationTest {
 
     }
 
-//    @Test
-//    public void readEmperorsTest() {
-//        assertThat(this.service.readEmperors()).isEqualTo(
-//                Stream.of(this.mapToDTO(testEmpWithId)).collect(Collectors.toList())
-//        );
-//    }
+    @Test
+    public void readEmperorsTest() {
+        assertThat(this.service.readEmperors()).isEqualTo(
+                Stream.of(this.mapToDTO(testEmpWithId)).collect(Collectors.toList())
+        );
+    }
 
     @Test
     public void createEmperorTest() {
         assertEquals(this.mapToDTO(this.testEmpWithId), this.service.createEmperor(testEmp));
     }
 
-//    @Test
-//    public void findEmperorByIdTest() {
-//        assertThat(this.service.findEmperorById(this.testEmpWithId.getEmperorId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
-//    }
+    @Test
+    public void findEmperorByIdTest() {
+        assertThat(this.service.findEmperorById(this.testEmpWithId.getEmperorId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
+    }
 
     @Test
     public void deleteEmperorTest() {

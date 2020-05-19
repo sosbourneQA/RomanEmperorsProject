@@ -16,7 +16,7 @@ public class Emperor {
     private String reignStart;
     private String reignEnd;
 
-    @OneToMany(mappedBy = "emperor", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "emperor", fetch = FetchType.EAGER)
     private List<Article> articles = new ArrayList<>();
 
     public Emperor() {
