@@ -72,7 +72,7 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 
 1. Create a new 'Freestyle project' on Jenkins by clicking on 'New Item' on the homepage.
 2. In the 'Source Code Management' section click 'Git' and link the project to your project repository by iputting the URL.
-3. In 'Build Triggers' click 'Build periodically' and input `* * * * *` to ensure the project builds each minute.
+3. In 'Build Triggers' click 'Build periodically' and input `H * * * *` to ensure the project builds each hour.
 4. In 'Build Environment' click 'Add timestamps to the Console Output' and 'Abort the build if it's stuck'.
 5. In 'Build' click 'Add build step' and select 'Execute Windown batch command'. 
 6. Enter the command: 
