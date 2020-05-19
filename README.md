@@ -1,4 +1,4 @@
-Coverage: ... SonarQube, ... JUnit
+Coverage: ... SonarQube, 91% JUnit
 
 # RomanEmperorsProject
 
@@ -10,15 +10,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository to the intended client
 2. Open in your IDE as a Maven Project.
-3.You may now run it from your IDE as a Maven project, or use
+3.You may now run it from your IDE as a Maven project, or use:
 
-                 mvn clean install
+                 `mvn clean install`
 
-inside of the project folder, followed by
+inside of the project folder, followed by:
 
-                 java -jar target/LukeSO-SoftwareMarch16-HobbyProject-jar-with-dependencies.jar
+                 `java -jar target/LukeSO-SoftwareMarch16-HobbyProject-jar-with-dependencies.jar`
 
-5. 
+
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ You will need to install Maven, Java, Git & Jenkins software and ensure they are
 
 1. 
 2.
-3...
+3.
 
 
 ### Running the tests

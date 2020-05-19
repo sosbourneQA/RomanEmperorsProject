@@ -1,7 +1,6 @@
 package com.qa.dto;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class EmperorDTO {
 
@@ -14,13 +13,6 @@ public class EmperorDTO {
 
     public EmperorDTO() {
     }
-
-//    public EmperorDTO(String name, String reignStart, String reignEnd) {
-//        this.name = name;
-//        this.reignStart = reignStart;
-//        this.reignEnd = reignEnd;
-//    }
-
 
     public EmperorDTO(String name, String reignStart, String reignEnd, List<ArticleDTO> articles) {
         this.name = name;
