@@ -52,22 +52,22 @@ public class EmperorServiceIntegrationTest {
 
     }
 
-    @Test
-    public void readEmperorsTest() {
-        assertThat(this.service.readEmperors()).isEqualTo(
-                Stream.of(this.mapToDTO(testEmpWithId)).collect(Collectors.toList())
-        );
-    }
+//    @Test
+//    public void readEmperorsTest() {
+//        assertThat(this.service.readEmperors()).isEqualTo(
+//                Stream.of(this.mapToDTO(testEmpWithId)).collect(Collectors.toList())
+//        );
+//    }
 
     @Test
     public void createEmperorTest() {
         assertEquals(this.mapToDTO(this.testEmpWithId), this.service.createEmperor(testEmp));
     }
 
-    @Test
-    public void findEmperorByIdTest() {
-        assertThat(this.service.findEmperorById(this.testEmpWithId.getEmperorId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
-    }
+//    @Test
+//    public void findEmperorByIdTest() {
+//        assertThat(this.service.findEmperorById(this.testEmpWithId.getEmperorId())).isEqualTo(this.mapToDTO(this.testEmpWithId));
+//    }
 
     @Test
     public void deleteEmperorTest() {
