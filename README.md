@@ -4,7 +4,7 @@ Test Coverage: 87.8% SonarQube, 91% JUnit
 
 This is a spring web-application made using Spring Boot that allows users can create profiles for a Roman emperors and then add articles relating to specific emperors. Emperors and articles can be read, updated or destroyed by the user and instances are stored on an H2 Relational Database Management System. The instances are stored in my H2 database. I developed the program as a Maven project, using IntelliJ as my IDE. The back-end is written in Java and the front-end uses a combination of HTML, CSS and JavaScript. I used Jenkins as the CI Server so send and copy of the program to SonarQube, which was used for static anlysis and was hosted on a virtual machine instance on GCP, and to Nexus Artifact Repository. An idea of the workflow is given by the project kanban board which can be found in the 'Projects' tab on GitHub.
 
-The program's server can be run in a terminal, and has been tested on Windows Command Promp and Git Bash using the command 'mvn spring-boot:run'. The server is configured to run on 'localport:8181'. Once the program is running, a user can access the application by searching for the configured localport URL in the browser.
+The program's server can be run in a terminal, and has been tested in Windows Command Promp and Git Bash using the command 'mvn spring-boot:run'. The server is configured to run on 'localport:8181'. Once the program is running, a user can access the application by searching for the configured localport URL in the browser.
 
 ### Prerequisites 
 
@@ -72,7 +72,7 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 
 1. Create a new 'Freestyle project' on Jenkins by clicking on 'New Item' on the homepage.
 2. In the 'Source Code Management' section click 'Git' and link the project to your project repository by iputting the URL.
-3. In 'Build Triggers' click 'Build periodically' and input `* * * * *` to ensure the project builds each minute.
+3. In 'Build Triggers' click 'Build periodically' and input `H * * * *` to ensure the project builds each hour.
 4. In 'Build Environment' click 'Add timestamps to the Console Output' and 'Abort the build if it's stuck'.
 5. In 'Build' click 'Add build step' and select 'Execute Windown batch command'. 
 6. Enter the command: 
@@ -83,7 +83,7 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 
         `mvn sonar:sonar -Dsonar.host.url=http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000 -Dsonar.login.admin=admin -Dsonar.password=admin`
         
-8. If you have copied these steps correctly you should now be able to see an instance of the project in your SonarQube account and read the code analysis at `http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000`
+8. If you have copied these steps correctly you should now be able to see an instance of the project in your SonarQube account and read the code analysis at `http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000`.
 
 
 ### Built With
@@ -102,7 +102,7 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 * [Postman](https://www.postman.com/) - Testing APIs
 * [Git](https://git-scm.com/) - Local Repository and Version Control Sytem
 * [H2 Database Engine](https://www.h2database.com/html/main.html) - Relational Database management System
-* [Spring Boot] (https://spring.io/projects/spring-boot) - Java-based Framework that is an API Development Platform
+* [Spring Boot](https://spring.io/projects/spring-boot) - Java-based Framework that is an API Development Platform
 
 ### Versioning
 
@@ -110,7 +110,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ### Authors
 
-* **Luke Smyth-Osbourne** - *Author* - [sosbourneQA](https://github.com/sosbourneQA)
+* **Luke Smyth-Osbourne** - *Author* - [sosbourneQA](https://github.com/sosbourneQA).
 
 
 ### License
@@ -121,7 +121,7 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ### Acknowledgments
 
-* **Nicholas Johnson** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds) 
+* **Nicholas Johnson** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds).
 * **Tadas Vaidotas** - Software Trainer - [tvaidotas](https://github.com/tvaidotas).
 * **Jordan Harrison** - Software Trainer - [JHarry444](https://github.com/JHarry444).
 
