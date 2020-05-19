@@ -10,7 +10,7 @@ The program's server can be run in a terminal, and has been tested on Windows Co
 
 In order to run the program you will need the following installed:
 
-* [Java SE 14](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html)
+* [Java SE 14](https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html) (OR a version no earlier than Java 11)
 * [Apache Maven](https://maven.apache.org/)
 * [ItelliJ](https://www.jetbrains.com/idea/download/#section=windows) or another suitable IDE for running Spring Boot 
 * [Jenkins](https://www.jenkins.io/download/)
