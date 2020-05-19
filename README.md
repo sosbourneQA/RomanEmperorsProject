@@ -58,11 +58,15 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 4. Scroll down to network tags and assign the tag 'tcp-9000'.
 5. Go back to your instance list and click 'SSH' beneath 'connect'.
 6. Enter this command into the terminal to install Docker:
+
 `curl https://gist.githubusercontent.com/christophperrins/760262e7308ceb8d9c51b4b984792a43/raw/00970ff2aa1857ab54f573f750c9f4f23d6c9578/installDocker.sh | sh`
+
 7. Exit the terminal, then open again and enter this command to install SonarQube:
+
 `curl https://gist.githubusercontent.com/christophperrins/760262e7308ceb8d9c51b4b984792a43/raw/00970ff2aa1857ab54f573f750c9f4f23d6c9578/installDocker.sh | sh`
+
 8. Exit the terminal, then open again and enter the command `docker start sonarqube` to run SonarQube inside the VM instance
-9. Open a new tab in any browser and enter the external IP address of your instance (next to 'SSH'), followed by a colon, followed by '9000' (http://YOUR_GCP_VM_EXTERNAL_IP_ADDRESS:9000) to access SonarQube.
+9. Open a new tab in any browser and enter the external IP address of your instance (next to 'SSH'), followed by a colon, followed by '9000' (`http://YOUR_GCP_VM_EXTERNAL_IP_ADDRESS:9000`) to access SonarQube.
 
 #### Deploy using Jenkins
 
@@ -72,10 +76,14 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 4. In 'Build Environment' click 'Add timestamps to the Console Output' and 'Abort the build if it's stuck'.
 5. In 'Build' click 'Add build step' and select 'Execute Windown batch command'. 
 6. Enter the command: 
+
         `mvn clean package`
+        
 7. Do step 5. again and enter the command:
+
         `mvn sonar:sonar -Dsonar.host.url=http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000 -Dsonar.login.admin=admin -Dsonar.password=admin`
-8. If you have copied these steps correctly you should now be able to see an instance of the project in your SonarQube account and read the code analysis at http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000
+        
+8. If you have copied these steps correctly you should now be able to see an instance of the project in your SonarQube account and read the code analysis at `http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000`
 
 
 ### Built With
