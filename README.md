@@ -2,7 +2,7 @@ Test Coverage: 87.8% SonarQube, 91% JUnit
 
 # RomanEmperorsProject
 
-This is a spring web-application made using Spring Boot that allows users can create profiles for a Roman emperors and then add articles relating to specific emperors. Emperors and articles can be read, updated or destroyed by the user and instances are stored on an H2 Relational Database Management System. The instances are stored in my H2 database. I developed the program as a Maven project, using IntelliJ as my IDE. The back-end is written in Java and the front-end uses a combination of HTML, CSS and JavaScript. I used Jenkins as the CI Server so send and copy of the program to SonarQube, which was used for static anlysis and was hosted on a virtual machine instance on GCP, and to Nexus Artifact Repository. An idea of the workflow is given by the project kanban board which can be found in the 'Projects' tab on GitHub.
+This is a spring web-application made using Spring Boot that allows users to create profiles for Roman emperors and then add articles relating to specific emperors. Emperors and articles can be created, read or updated by the user and instances are stored on an H2 Relational Database Management System. The instances are stored in my H2 database. I developed the program as a Maven project, using IntelliJ as my IDE. The back-end is written in Java and the front-end uses a combination of HTML, CSS and JavaScript. I used Jenkins as the CI Server to send a copy of the program to SonarQube, which was used for static anlysis and was hosted on a virtual machine instance on GCP, and to Nexus Artifact Repository. An idea of the workflow is given by the project kanban board which can be found in the 'Projects' tab on GitHub.
 
 The program's server can be run in a terminal, and has been tested in Windows Command Promp and Git Bash using the command 'mvn spring-boot:run'. The server is configured to run on 'localport:8181'. Once the program is running, a user can access the application by searching for the configured localport URL in the browser.
 
@@ -37,7 +37,7 @@ The project uses the following tools for testing: JUnit for Unit Testing, JUnit 
 
 #### Unit Tests
 
-Individual funstions within the program can be tested using JUnitt.
+Individual functions within the program can be tested using JUnitt.
 
 To do this in IntelliJ do the following:
 
@@ -48,7 +48,7 @@ To do this in IntelliJ do the following:
 
 #### Integration Tests
 
-Iintegration tests are done using Mockito which mocks user input and creates a map of possible inputs to test for errors. They are run using JUnit and so in order to run them follow the same instructions as for Unit Tests.
+Integration tests are done using Mockito which mocks user input and creates a map of possible inputs to test for errors. They are run using JUnit and so in order to run them follow the same instructions as for Unit Tests.
 
 #### SonarQube
 
@@ -66,7 +66,7 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
 `curl https://gist.githubusercontent.com/christophperrins/760262e7308ceb8d9c51b4b984792a43/raw/00970ff2aa1857ab54f573f750c9f4f23d6c9578/installDocker.sh | sh`
 
 8. Exit the terminal, then open again and enter the command `docker start sonarqube` to run SonarQube inside the VM instance
-9. Open a new tab in any browser and enter the external IP address of your instance (next to 'SSH'), followed by a colon, followed by '9000' (`http://YOUR_GCP_VM_EXTERNAL_IP_ADDRESS:9000`) to access SonarQube.
+9. Open a new tab in any browser and enter the external IP address of your instance (next to 'SSH'), followed by a colon, and then by '9000' (`http://YOUR_GCP_VM_EXTERNAL_IP_ADDRESS:9000`) to access SonarQube.
 
 #### Deploy using Jenkins
 
