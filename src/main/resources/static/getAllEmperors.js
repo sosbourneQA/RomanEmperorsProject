@@ -41,7 +41,7 @@ function populateDiv(emperors) {
         article.className = "post invert style1 alt";
         article.id = emp.emperorId;
         divTwo.className = "image";
-        image.src = "images/Augustus.jpg";
+        image.src = "images/Hadrian.jpg";
         image.position = "10% center";
         divThree.className = "content";
         divFour.className = "inner";
