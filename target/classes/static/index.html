@@ -25,9 +25,9 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="createEmperor.html">Create Emperor</a></li>
-					<li><a href="updateEmperor.html">Update Emperor</a></li>
-					<li><a href="createArticle.html">Add Article</a></li>
+					<li><a href="assets/html/createEmperor.html">Create Emperor</a></li>
+					<li><a href="assets/html/updateEmperor.html">Update Emperor</a></li>
+					<li><a href="assets/html/createArticle.html">Add Article</a></li>
 				</ul>
 			</nav>
 
@@ -37,12 +37,14 @@
 					<h1>Read articles by accredited historians about <br/>
 					Roman Emperors</h1>
 					<ul class="actions">
-						<li><a href="#one" class="button alt scrolly big">Continue</a></li>
+						<li><a id="getEmperors" href="#one" class="button alt scrolly big">Show All Emperors</a></li>
+<!--						<button id="getEmperors">GET</button>-->
 					</ul>
 				</div>
 			</section>
 
 		<!-- One -->
+		<div id="articleDiv">
 			<article id="one" class="post style1">
 				<div class="image">
 					<img src="images/Augustus.jpg" alt="" data-position="75% center" />
@@ -50,9 +52,9 @@
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h2><a href="profilePage.html">Augustus</a></h2>
+							<h2 id="emperorOne" ><a href="profilePage.html">Augustus</a></h2>
 <!--							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>-->
-							<p>27 BC - 27 AD</p>
+							<p>27 BC - 14AD</p>
 						</header>
 						<p>Augustus was a Roman statesman and military leader who became the first emperor of the Roman Empire, reigning from 27 BC until his death in AD 14. His status as the founder of the Roman Principate has consolidated an enduring legacy as one of the most effective and controversial leaders in human history.</p>
 						<ul class="actions">
@@ -67,28 +69,29 @@
 			</article>
 
 		<!-- Two -->
-			<article id="two" class="post invert style1 alt">
-				<div class="image">
-					<img src="images/pic13.jpg" alt="" data-position="10% center" />
-				</div>
-				<div class="content">
-					<div class="inner">
-						<header>
-							<h2><a href="profilePage.html">EMPEROR NAME</a></h2>
+<!--			<article id="two" class="post invert style1 alt">-->
+<!--				<div class="image">-->
+<!--					<img src="images/pic13.jpg" alt="" data-position="10% center" />-->
+<!--				</div>-->
+<!--				<div class="content">-->
+<!--					<div class="inner">-->
+<!--						<header>-->
+<!--							<h2 id="emperorTwo"></h2>-->
 <!--							<p class="info">3 days ago by <a href="#">Jane Doe</a></p>-->
-							<p>DATE</p>
-						</header>
-						<p>DESCRIPTION OF EMPEROR</p>
-						<ul class="actions">
-							<li><a href="profilePage.html" class="button alt">Read Articles</a></li>
-						</ul>
-					</div>
-					<div class="postnav">
-						<a href="#one" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#three" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
-					</div>
-				</div>
-			</article>
+<!--							<p>DATE</p>-->
+<!--						</header>-->
+<!--						<p>DESCRIPTION OF EMPEROR</p>-->
+<!--						<ul class="actions">-->
+<!--							<li><a href="profilePage.html" class="button alt">Read Articles</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--					<div class="postnav">-->
+<!--						<a href="#one" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>-->
+<!--						<a href="#three" class="scrolly next"><span class="icon fa-chevron-down"></span></a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</article>-->
+		</div>
 
 <!--		&lt;!&ndash; Three &ndash;&gt;-->
 <!--			<article id="three" class="post style2">-->
@@ -200,6 +203,8 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		     <script src="getAllEmperors.js"></script>
 
 	</body>
 </html>

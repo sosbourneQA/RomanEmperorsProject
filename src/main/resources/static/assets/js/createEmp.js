@@ -21,3 +21,5 @@ function createEmperor() {
 }
 let buttCreateEmperor = document.querySelector("#createEmp");
 buttCreateEmperor.addEventListener("click", createEmperor);
+
+document.querySelector('#emperorTwo').innerHTML = document.getElementById("empName").value;
