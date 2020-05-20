@@ -81,9 +81,9 @@ Iintegration tests are done using Mockito which mocks user input and creates a m
         
 7. Do step 5. again and enter the command:
 
-        `mvn sonar:sonar -Dsonar.host.url=http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000 -Dsonar.login.admin=admin -Dsonar.password=admin`
+        `mvn sonar:sonar -Dsonar.host.url=http://YOUR_GCP_VM_EXTERNAL_IP_ADDRESS:9000 -Dsonar.login.admin=admin -Dsonar.password=admin`
         
-8. If you have copied these steps correctly you should now be able to see an instance of the project in your SonarQube account and read the code analysis at `http://YOUR_GCP_VM_EXTERNAL_ID_ADDRESS:9000`.
+8. If you have copied these steps correctly you should now be able to see an instance of the project in your SonarQube account and read the code analysis at `http://YOUR_GCP_VM_EXTERNAL_IP_ADDRESS:9000`.
 
 
 ### Built With
