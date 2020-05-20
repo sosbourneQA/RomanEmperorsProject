@@ -124,5 +124,6 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 * **Nicholas Johnson** - Software Trainer - [nicholasjohnson](https://github.com/nickrstewarttds).
 * **Tadas Vaidotas** - Software Trainer - [tvaidotas](https://github.com/tvaidotas).
 * **Jordan Harrison** - Software Trainer - [JHarry444](https://github.com/JHarry444).
+* **David Williams** - Advice with JavaScript - [DavidWilliamsQA](https://github.com/DavidWilliamsQA).
 
 
